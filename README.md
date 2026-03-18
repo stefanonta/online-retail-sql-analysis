@@ -8,13 +8,13 @@ focusing on customer behaviour, product performance, and revenue trends.
 ## Dataset
 - **Source:** [UCI Online Retail Dataset via Kaggle](https://www.kaggle.com/datasets/vijayuv/onlineretail)
 - **Rows:** 541,909
-- **Period:** December 2010 – December 2011
+- **Period:** December 2010 to December 2011
 - **Key fields:** InvoiceNo, StockCode, Description, Quantity, InvoiceDate, UnitPrice, CustomerID, Country
 
 ## Data Quality Notes
-- 135,080 rows (~25%) have no CustomerID, representing guest or untracked purchases
+- 135,080 rows (about 25%) have no CustomerID, representing guest or untracked purchases
 - Queries involving customer-level analysis exclude NULL CustomerIDs with documented rationale
-- Some products share the same StockCode with slightly different descriptions (likely data entry inconsistencies) — handled via MAX(description) aggregation
+- Some products share the same StockCode with slightly different descriptions (likely data entry inconsistencies), I handled this incosistency via MAX(description) aggregation
 
 ## Key Findings
 
