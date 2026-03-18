@@ -67,4 +67,4 @@ focusing on customer behaviour, product performance, and revenue trends.
 
 ## Author
 Stefano Noventa
-[LinkedIn URL] | [GitHub URL]
+[LinkedIn](https://www.linkedin.com/in/stefanonta/) | [GitHub](https://github.com/stefanonta)
