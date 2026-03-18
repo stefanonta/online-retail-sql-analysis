@@ -56,7 +56,7 @@ focusing on customer behaviour, product performance, and revenue trends.
 
 ## Technical Highlights
 - Consistent NULL handling across all 15 queries with documented rationale
-- Deliberate frame clause selection — default, forward-looking, centered, and full-partition frames each used where appropriate
+- Deliberate frame clause selection: default, forward-looking, centered, and full-partition frames each used where appropriate
 - CTEs used for pre-aggregation before window function application
 - Nested aggregation pattern (SUM(SUM(...))) applied where window functions operate on already-aggregated data
 - Date truncation used throughout to handle timestamp granularity consistently
