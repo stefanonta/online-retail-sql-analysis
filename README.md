@@ -1,4 +1,4 @@
-# Online Retail Sales Analysis — SQL Window Functions
+# Online Retail Sales Analysis - SQL Window Functions
 
 ## Overview
 Exploratory analysis of 541,909 transactional records from a UK-based online retailer (2010–2011).
