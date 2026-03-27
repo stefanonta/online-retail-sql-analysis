@@ -277,7 +277,7 @@ ORDER BY active_days DESC;
 SELECT
     DATE_TRUNC('month', invoice_date) AS invoice_month,
     ROUND(SUM(quantity * unit_price), 0) AS monthly_revenue,
-    -- Running total frame: default ORDER BY sets ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    -- ORDER BY makes this a running frame from the start of the partition up to the current row
     -- SUM(SUM()) — inner SUM aggregates rows into monthly totals, outer SUM applies the window
     -- NULL customer_id rows are retained: they represent valid revenue from guest purchases
     SUM(SUM(quantity * unit_price)) OVER (
@@ -357,7 +357,7 @@ SELECT
     customer_id,
     DATE_TRUNC('day', invoice_date) AS invoice_day,
     SUM(quantity * unit_price) AS daily_spend,
-    -- Forward-looking frame: current row + 7 following rows = 8 days total
+    -- 8-row forward-looking spending window per customer
     SUM(SUM(quantity * unit_price)) OVER (
         PARTITION BY customer_id
         ORDER BY DATE_TRUNC('day', invoice_date)
